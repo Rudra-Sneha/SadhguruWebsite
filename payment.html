@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<title>Payment</title>
+	</head>
+	<body bgcolor="#000080">
+	<script>
+	function validate()
+	{
+		var num=document.getElementById("card_num").value;
+		var cvv=document.getElementById("cvv").value;
+		var name=document.getElementById("name").value;
+		if(num==""||cvv==""||name==""){
+		alert("please fill all the details")                                                                                                            
+		return false;
+		}
+		else if(isNaN(num)||isNaN(cvv)){
+		alert("card number and cvv cannot be non-numeric")
+		return false;
+		}
+		return true;
+	}
+	</script>
+		<div align="center">
+		<form method="post" action="confirm.html" onsubmit="return(validate())">
+			<h1 style="color:brown"> Payment by Credit or Debit card</h1>
+			<table  border="0">
+			<tr>
+				<td align="center"><b><label style="color:orange">Card number</label></b></td>
+				<td align="center"><input type="text" id="card_num"></td>
+			</tr>
+			<tr>
+				<td align="center"><b><label style="color:orange">CVV number</label></b></td>
+				<td align="center"><input type="text" id="cvv"></td>
+			</tr>
+			<tr>
+				<td align="center"><b><label style="color:orange">Card Holder name</label></b></td>
+				<td align="center"><input type="text" id="name"></td>
+			</tr>
+			</table>
+			<br><input type="submit" value="submit">
+		</form>	
+		</div>
+	</body>
+</html>

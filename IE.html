@@ -1,0 +1,115 @@
+<html>
+	<head>
+		<title>Inner Engineering</title>
+	</head>
+	<body bgcolor="#000080">
+		<form method="post" action="payment.html" onsubmit="return(validate())">
+		<div align="center">
+		<span style="font-size:26">In 7 Steps</span><br>
+		<span style="color:orange; font-size:26">Transfrom Your Life</span><br>
+		<span style="color:orange">------------with---------------</span><br>
+		<span style="font-family:Serif; font-size:32">SADHGURU</span><br>
+		<span style="color:orange">-------------------------------</span><br>
+		<span style="color:white">An online program offering <br> to take charge of your <br>body, mind, emotions and<br> energies, and live a joyful,<br> fulfilling life.</span>
+		<p style="color:orange"> *This program is open only for Indian participants. Please note that only Indian modes of payment will be accepted*</p>
+			<script type="text/javascript">
+				function validate()
+				{
+				var fn=document.getElementById("first_name").value;
+				var ln=document.getElementById("last_name").value;
+				var phone=document.getElementById("phone").value;
+				var email=document.getElementById("email").value;
+				var	atpos = email.indexOf("@");
+				var	dotpos = email.lastIndexOf(".");
+				var pos=document.getElementById("postal_code").value;
+				var state=document.getElementById("state").value;
+				var city=document.getElementById("city").value;
+				var address=document.getElementById("address").value;
+				var agree=document.getElementById("agree");
+				if(fn==""||ln==""||phone==""||email==""||pos==""||state==""||city==""||address==""){
+					alert("please fill all the details")
+					return false;
+					}
+					else if(isNaN(phone)||phone.length!=10){
+					alert("enter correct phone number")
+					return false;
+					}
+					else if (atpos < 1 || ( dotpos - atpos < 2 )){
+						alert("Please enter correct email ID")
+						document.email.focus() ;
+						return false;
+					}
+					else if(isNaN(pos) || pos.length!=6){
+					alert("enter correct postal code")
+					return false;
+					}
+					
+					else if(!agree.checked)
+					{
+					alert("please select the checkbox")
+					return false;
+					}
+					
+					return true;
+				}
+			</script>	
+		
+			<h1  style="color:orange">*Program details*</h1>
+			<table>
+				<tr>
+					<h2 style="color:brown">First name</h2>
+					<input type="text" id="first_name">
+				</tr><br>
+				<tr>
+					<h2 style="color:brown">Last name</h2>
+					<input type="text" id="last_name">
+				</tr><br>
+				<tr>
+					<h2 style="color:brown">Phone number</h2>
+					<input type="text" id="phone" maxlength="10">
+				</tr>
+				<tr>
+					<h2 style="color:brown">Email</h2>
+					<input type="Email" id="email">
+				</tr><br>
+				<tr>
+					<h2 style="color:brown">Country of residence</h2>
+					<input type="text" id="country" value="India" disabled>
+				</tr><br>
+				<tr>
+					<h2 style="color:brown">Postal Code</h2>
+					<input type="text" id="postal_code">
+				</tr><br>
+				<tr>
+					<h2 style="color:brown">State</h2>
+					<input type="text" id="state">
+				</tr><br>
+				<tr>
+					<h2 style="color:brown">City</h2>
+					<input type="text" id="city">
+				</tr><br>
+				<tr>
+					<h2 style="color:brown">Address</h2>
+					<input type="text" id="address">
+				</tr><br><br>
+				<tr>
+				<input type="checkbox" id="agree"><span style="color:white">I agree that I have read the Medical Health<br>
+													Requirements &amp; the Medical Waiver.[It is <br>
+													critical for those with a recent history of <br>
+													severe psychological/physical ailments to <br> 
+													thoroughly read the reuirements.]
+												</span>
+				</tr><br>
+				<tr>
+					<h2 style="color:red">INR 4000</h2>
+				</tr>
+				<tr>
+					<input type="submit" value="continue">
+				</tr>
+			</table>	
+			</div>
+		</form>	
+		<center><a href="homepage.html"><button style="background-color:brown">home</button></a></center>
+	</body>
+</html>
+</html>	

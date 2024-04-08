@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<title>register</title>
+	</head>
+	<script type="text/javascript">
+		function validate()
+		{
+			var u=document.getElementById("username").value;
+			var p=document.getElementById("password").value;
+			var cp=document.getElementById("cp").value;
+			if(u=="")
+			{
+			alert("please enter your username")
+			return false;
+			}
+			if(p==""){
+			alert("please enter your password")
+			return false;
+			}
+			if(cp==""){
+			alert("please confirm your password")
+			return false;
+			}
+			if(p!=cp){
+			alert("please confirm your password correctly")
+			return false;
+			}
+			return true;
+		}
+	</script>
+	<body bgcolor="orange">
+	<div align="center">
+	 <img src="https://play-lh.googleusercontent.com/mUlaWjQsKr6guWoqSbax57X6gRq9qxWFfA0W_Sury0aV4fqF23mc1Lzkbt2Hrnpj2A" height="200" width="200">
+	 <br><br>
+	 <form method="post" action="insert.php" onsubmit="return(validate())">
+		<table  border="0">
+			<tr>
+				<td align="center"><b><label>username</label></b></td>
+				<td align="center"><input type="text" id="username" name="username"></td>
+			</tr>
+			<tr>
+				<td align="center"><b><label>password</label></b></td>
+				<td align="center"><input type="password" id="password" name="password"></td>
+			</tr>
+			<tr>
+				<td align="center"><b><label>confirm password</label></b></td>
+				<td align="center"><input type="password" id="cp"></td>
+			</tr>
+		</table>
+		
+			<input type="submit" value="submit" >
+		</form>
+		</div>
+	</body>
+</html>	
